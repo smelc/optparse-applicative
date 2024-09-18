@@ -268,7 +268,7 @@ parserUsage pprefs p progn =
     hsep
       [ pretty "Usage:",
         pretty progn,
-        hangAtIfOver 9 35 (extractChunk (briefDesc pprefs p))
+        align (extractChunk (briefDesc pprefs p))
       ]
 
 -- | Peek at the structure of the rendered tree within.

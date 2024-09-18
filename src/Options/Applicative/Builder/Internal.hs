@@ -26,7 +26,7 @@ module Options.Applicative.Builder.Internal (
 
 import Control.Applicative
 import Control.Monad (mplus)
-import Data.Semigroup hiding (Option)
+import Data.Semigroup -- hiding (Option)
 import Prelude
 
 import Options.Applicative.Common
