@@ -3,6 +3,7 @@ module Options.Applicative.Types (
   ParseError(..),
   ParserInfo(..),
   ParserPrefs(..),
+  BriefPrettyPrinter(..),
 
   Option(..),
   OptName(..),
@@ -127,7 +128,15 @@ data ParserPrefs = ParserPrefs
                                   -- show parent options under a "global options"
                                   -- section (default: False)
   , prefTabulateFill ::Int       -- ^ Indentation width for tables
+  , prefBriefPP :: BriefPrettyPrinter -- ^ Function to format the brief description
   } deriving (Eq, Show)
+
+data BriefPrettyPrinter =
+    BriefPPHangAtIfOver Int Int   -- ^ Pretty print with 'Options.Applicative.Help.Pretty.hangAtIfOver'.
+                                  --   This is the default.
+  | BriefPPAlign                  -- ^ Pretty print with 'Options.Applicative.Help.Pretty.align'.
+                                  --   Better for descriptions with disjunctions with lots of operands.
+  deriving (Eq, Show)
 
 data OptName = OptShort !Char
              | OptLong !String

@@ -187,6 +187,7 @@ module Options.Applicative (
   prefs,
 
   ParserPrefs(..),
+  BriefPrettyPrinter(..),
 
   PrefsMod,
   multiSuffix,
@@ -199,6 +200,7 @@ module Options.Applicative (
   helpLongEquals,
   helpShowGlobals,
   helpIndent,
+  briefPrettyPrinter,
   defaultPrefs,
 
   -- * Completions
